@@ -24,8 +24,10 @@ func image(w http.ResponseWriter, r *http.Request){
 }
 
 func main(){
+
 	http.HandleFunc("/", foo)
 	http.HandleFunc("/dog/", dog)
 	http.HandleFunc("/dog.jpg", image)
 	log.Fatalln(http.ListenAndServe(":8080", nil))
+	
 }
